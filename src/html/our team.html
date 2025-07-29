@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Our Team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #9776;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 32px;
+      color: #ff4444;
+    }
+
+    .intro {
+      text-align: center;
+      padding: 30px 20px;
+      background: #1c1b29;
+      color: #fff;
+    }
+
+    .intro h1 {
+      font-size: 28px;
+      color: #ffa500;
+      margin-bottom: 15px;
+    }
+
+    .intro p {
+      font-size: 16px;
+      color: #ddd;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .team-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: #000;
+      border-radius: 10px;
+      width: 180px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background: #ffa500;
+    }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #fff;
+      background-color: #444;
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: #ff6666;
+    }
+
+    .about {
+      text-align: center;
+      text-decoration: none;
+      background: #272634;
+      padding: 20px;
+      color: #fff;
+    }
+
+    .about h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .sidenav a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      margin: 5px 0;
+    }
+
+    .sidenav a:hover {
+      text-decoration: underline;
+    }
+
+    a {
+      color: #ff9999;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Meet Our Team</h2>
+
+  <!-- ✅ Simple Intro Section Added Below -->
+  <div class="intro">
+    <h1>We Work Together. We Build Amazing Things.</h1>
+    <p>We are a group of creative and dedicated developers who turn ideas into real digital solutions. From design to coding, we work as a team to make things better and easier for everyone.</p>
+  </div>
+
+  <div class="team-container">
+    <div class="row">
+      <div class="card">
+        <img src="" alt="Leader">
+        <h3>Aman Kumar</h3>
+        <p>Team Leader and Tester</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card">
+        <img src="" alt="Member 1">
+        <h3>Priyanshu Kumar</h3>
+        <p>Frontend Developer</p>
+      </div>
+      <div class="card">
+        <img src="" alt="Member 2">
+        <h3>Chandani Kumari</h3>
+        <p>UI/UX Designer</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card">
+        <img src="" alt="Member 3">
+        <h3>Simaran Kumari</h3>
+        <p>Backend Developer</p>
+      </div>
+      <div class="card">
+        <img src="" alt="Member 4">
+        <h3>Ajit Kumar</h3>
+        <p>Frontend Developer</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="about">
+      <section class="about">
+        <h1>About Us</h1>
+        <p>We are a team of passionate developers dedicated 
+          to creating innovative and user-friendly solutions. 
+          Our goal is to empower businesses with technology.</p>
+      </section>
+      <section class="about">
+        <h1>Quick Link</h1>
+        <div class="sidenav" id="mysidenav">
+          <a href="#"><i class="fa-solid fa-house"></i> Home</a><br>
+          <a href="#"><i class="fa-solid fa-phone"></i> Contact</a><br>
+          <a href="#"><i class="fa-solid fa-info"></i> About Us</a><br>
+          <a href="#"><i class="fa-solid fa-gears"></i> Search</a><br>
+          <a href="#">Log Out</a><br>
+        </div>
+      </section>
+      <section class="about">
+        <h1>Contact</h1>
+        <a href="mailto:aman123@gmail.com">Email:- aman123@gmail.com</a><br>
+        <a href="tel:+9661761533">Contact us:- 9661761533</a>
+      </section>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartVote</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background: linear-gradient(to right, #003087, #0052cc);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    header p {
+      margin: 5px 0 15px;
+      font-size: 16px;
+    }
+
+    .navbar {
+      background: #002060;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: relative;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #002060;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+    footer {
+      margin-top: 40px;
+      background-color: #ddd;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+    .about{
+    text-align: center;
+    text-decoration: none;
+    background: #1b3a4b;
+}    
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            margin-top: 60px;
+            padding: 20px;
+            text-align: center;
+            background: lightgray;
+        }
+        .image-placeholder {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #ccc;
+            margin: 20px auto;
+        }
+        .candidate-form {
+            margin: 20px auto;
+            width: 300px;
+        }
+        .candidate-form input {
+            margin: 10px 0;
+            padding: 5px;
+            width: 100%;
+        }
+        .candidate-list {
+            margin-top: 20px;
+        }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>SMARTVOTE</h1>
+    <p>Welcome to Online Voting System</p>
+  </header>
+
+  <div class="navbar">
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="homepage.html" onclick="document.getElementById('adminform').style.display='block'">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+      <a href="login.html" onclick="document.getElementById('adminform').style.display='block'">Login</a>
+      <a href="admin.html" onclick="document.getElementById('adminform').style.display='block'">Admin Login</a>
+    </nav>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('show');
+    }
+  </script>
+  <div class="content">
+        <h2>Online Voting System</h2>
+        <div class="image-placeholder">Image</div>
+        <div class="candidate-form">
+            <h3>Add Candidate for Election</h3>
+            <input type="text" placeholder="Candidate Name">
+            <input type="text" placeholder="Party Name">
+            <input type="file" accept="image/*" placeholder="Image">
+            <button>Submit</button>
+        </div>
+        <div class="candidate-list">
+            <h3>Total List of Candidates</h3>
+            <p>Candidate Total</p>
+        </div>
+    </div>
+  <footer>
+<div class="about">
+  <section class ="about">
+    <h1>About Us</h1>
+    <p>We are a team of passionate developers dedicated 
+        to creating innovative and user-friendly solutions. 
+        Our goal is to empower businesses with technology.</p>
+  </section>
+  <section class="about">
+    <h1>Quick Link</h1>
+    <div class="sidenav" id="mysidenav">
+                <a href="homepage.html" onclick="document.getElementById('adminform').style.display='block'"><i class="fa-solid fa-house"></i> Home</a><br>
+                <a href="#"><i class="fa-solid fa-phone"></i> Contact</a><br>
+                <a href="#"><i class="fa-solid fa-info"></i> About Us</a><br>
+               
+                
+                <a href="#">Log Out</a><br>
+            </div>
+  </section>
+  <section class="about">
+    <h1>Contact</h1>
+    <a href="mailto:aman123@gmail.com">Email Us:-aman123@gmail.com</a><br>
+    <a href="tel:+9661761533">Call Us:-9661761533</a>
+  </section>
+  </div>
+  </footer>
+</body>
+</html>

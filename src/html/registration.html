@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 600px;
+            margin: 200px auto 300px 400px;
+            padding: 20px;
+            border: 1px solid #aaa;
+            border-radius: 10px;
+            background:#f2f2f2;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .row input, .row select {
+            flex: 1;
+            margin-right: 10px;
+            padding: 5px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #004080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #003366;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Registration Form</h2>
+    
+    <form>
+        <div class="row">
+            <input type="text" placeholder="Name" required>
+            <input type="date" placeholder="Date of Birth" required>
+            <input type="email" placeholder="Email" required>
+        </div>
+
+        <div class="row">
+            <input type="tel" placeholder="Mobile No." required>
+            <select required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="file" accept="image/*" required>
+        </div>
+
+        <div class="row">
+            <input type="text" placeholder="ID" required>
+            <input type="text" placeholder="Aadhaar No." required>
+            <input type="password" placeholder="Create Password" required>
+        </div>
+
+        <div class="row">
+            <input type="date" required>
+            <input type="password" placeholder="Confirm Password" required>
+        </div>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+</div>
+
+<script>
+function submitForm() {
+  alert("Form submitted successfully!");
+}
+</script>
+
+</body>
+</html>
