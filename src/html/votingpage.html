@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartVote</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background: linear-gradient(to right, #003087, #0052cc);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    header p {
+      margin: 5px 0 15px;
+      font-size: 16px;
+    }
+
+    .navbar {
+      background: #002060;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: relative;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #002060;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    .hd {
+      text-align: center;
+      padding: 80px 20px;
+      background-color: red;
+      color: white;
+    }
+
+    .hd h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .hd h4 {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .voter-section {
+      width: 30%;
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .voter-section img {
+      width: 100px;
+      height: 100px;
+      border-radius: 5px;
+    }
+
+    .candidate-section {
+      width: 70%;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .candidate {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .details {
+      flex: 2;
+    }
+
+    .symbol, .photo {
+      flex: 1;
+      text-align: center;
+    }
+
+    .symbol img, .photo img {
+      width: 80px;
+      height: 80px;
+      border-radius: 5px;
+    }
+
+    .vote-btn {
+      background-color: red;
+      border: none;
+      padding: 6px 12px;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .vote-btn:disabled {
+      background-color: grey;
+      cursor: not-allowed;
+    }
+
+    .status {
+      color: green;
+      font-weight: bold;
+    }
+
+    .status.not-voted {
+      color: red;
+    }
+
+    /* --- Footer CSS Below --- */
+    footer {
+      background-color: #1b3a4b;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .full {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .full > div {
+      width: 30%;
+      margin: 10px;
+    }
+
+    footer h1 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    footer p, footer a {
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .about p {
+      max-width: 250px;
+      line-height: 1.5;
+    }
+
+    .sidenav a {
+      display: block;
+      margin: 5px 0;
+    }
+
+    .sidenav i {
+      margin-right: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .full {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .full > div {
+        width: 100%;
+      }
+
+      .about p {
+        max-width: 90%;
+        margin: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>SMARTVOTE</h1>
+    <p>Welcome to Online Voting System</p>
+  </header>
+
+  <div class="navbar">
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="/homepage.html">Home</a>
+      <a href="#" onclick="document.getElementById('loginform').style.display='block'">About Us</a>
+      <a href="#" onclick="document.getElementById('loginform').style.display='block'">Contact</a>
+      <a href="/Votingapp/src/html/login.html" onclick="document.getElementById('loginform').style.display='block'" >Login</a>
+      <a href="/Votingapp/src/html/admin.html" onclick="document.getElementById('adminform').style.display='block'">Admin Login</a>
+    </nav>
+  </div>
+
+  <section class="hd">
+    <h1>Welcome To Online Voting System</h1>
+    <h4>
+      An online voting system is a software platform that allows groups to securely
+      conduct votes and elections. High-quality online voting systems balance ballot
+      security, accessibility, and overall requirements of an organization's voting system.
+    </h4>
+  </section>
+
+  <h3 style="color:red; text-align:center;">You can only vote one Candidate</h3>
+
+  <div class="container">
+    <!-- Voter Details -->
+    <div class="voter-section">
+      <img src="images/voter.jpg" alt="Voter Image">
+      <h4>Voter Detail</h4>
+      <p><strong>Name:</strong> aman kumar</p>
+      <p><strong>Mobile No:</strong> 9661761533</p>
+      <p><strong>CNIC No:</strong> 13504</p>
+      <p class="status not-voted" id="voterStatus">Status: Not Voted</p>
+    </div>
+
+    <!-- Candidate Details -->
+    <div class="candidate-section">
+      <div class="candidate">
+        <div class="details">
+          <p><strong>Candidate Name:</strong> Abhishek kumar</p>
+          <p><strong>Party Name:</strong> BJP</p>
+          <p><strong>Total Votes:</strong> 4</p>
+          <button class="vote-btn" onclick="castVote(this)">Vote</button>
+        </div>
+        <div class="symbol">
+          <img src="" alt="Symbol">
+        </div>
+        <div class="photo">
+          <img src="" alt="Photo">
+        </div>
+      </div>
+
+      <div class="candidate">
+        <div class="details">
+          <p><strong>Candidate Name:</strong> Kashif quamar</p>
+          <p><strong>Party Name:</strong> JDU</p>
+          <p><strong>Total Votes:</strong> 0</p>
+          <button class="vote-btn" onclick="castVote(this)">Vote</button>
+        </div>
+        <div class="symbol">
+          <img src="" alt="Symbol">
+        </div>
+        <div class="photo">
+          <img src="" alt="Photo">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+
+    let hasVoted = false;
+
+    function castVote(button) {
+      if (hasVoted) {
+        alert("You have already voted!");
+        return;
+      }
+
+      alert("You have successfully cast your vote");
+
+      const status = document.getElementById("voterStatus");
+      status.textContent = "Status: Voted";
+      status.classList.remove("not-voted");
+      status.classList.add("voted");
+
+      document.querySelectorAll(".vote-btn").forEach(btn => btn.disabled = true);
+      hasVoted = true;
+    }
+  </script>
+
+  <footer>
+    <div class="full">
+      <div class="about">
+        <h1>About Us</h1>
+        <p>
+          We are a team of passionate developers dedicated 
+          to creating innovative and user-friendly solutions. 
+          Our goal is to empower businesses with technology.
+        </p>
+      </div>
+
+      <div class="quick">
+        <h1>Quick Link</h1>
+        <div class="sidenav">
+          <a href="/homepage.html" onclick="document.getElementById('loginform').style.display='block'"> Home</a>
+          <a href="#" onclick="document.getElementById('loginform').style.display='block'"> Contact</a>
+          <a href="#" onclick="document.getElementById('loginform').style.display='block'"> About Us</a>
+          <a href="#" onclick="document.getElementById('loginform').style.display='block'">Log Out</a>
+        </div>
+      </div>
+
+      <div class="about">
+        <h1>Contact</h1>
+        <a href="mailto:aman123@gmail.com">Email Us: aman123@gmail.com</a><br><br>
+        <a href="tel:+9661761533">Call Us: 9661761533</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

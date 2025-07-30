@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smartvote - Home</title>
+  
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #003366;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .navbar li {
+      flex: 1;
+      text-align: center;
+    }
+
+    .navbar a {
+      display: block;
+      padding: 14px 20px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .navbar a:hover {
+      background-color: #002244;
+    }
+
+    /* Hamburger icon */
+    .menu-icon {
+      display: none;
+      padding: 14px 20px;
+      cursor: pointer;
+      color: white;
+      font-size: 24px;
+      background-color: #003366;
+      text-align: right;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .navbar ul.show {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      .navbar li {
+        flex: none;
+      }
+    }
+
+    .banner {
+      width: 100%;
+      overflow: hidden;
+      max-height: 500px;
+    }
+
+    .banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .intro {
+      padding: 30px 15px;
+      text-align: center;
+    }
+
+    .intro h2 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      color: #555;
+      font-size: 18px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  footer {
+    background-color: #1b3a4b;
+    color: white;
+    padding: 40px 20px;
+  }
+
+  .full {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .full > div {
+    width: 30%; /* 👈 yahan fix kiya gaya width */
+    margin: 10px;
+  }
+
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  p, a {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+
+  .about p {
+    max-width: 250px;
+    line-height: 1.5;
+  }
+
+  .sidenav a {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .sidenav i {
+    margin-right: 5px;
+  }
+
+  @media (max-width: 768px) {
+    .full {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .full > div {
+      width: 100%;
+    }
+
+    .about p {
+      max-width: 90%;
+    }
+  }
+
+
+    @media (max-width: 600px) {
+      .intro h2 {
+        font-size: 22px;
+      }
+      .intro p {
+        font-size: 16px;
+      }
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("navMenu");
+      menu.classList.toggle("show");
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>SMARTVOTE</h1>
+    <p>Welcome to Online Voting System</p>
+  </header>
+
+  <nav class="navbar">
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <ul id="navMenu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="/Votingapp/src/html/login.html" onclick="document.getElementById('loginform').style.display='block'">Login</a></li>
+      <li><a href="/Votingapp/src/html/admin.html"onclick="document.getElementById('adminform').style.display='block'">Admin Login</a></li>
+    </ul>
+  </nav>
+
+  <div class="banner">
+    <img src="image/pexels-tara-winstead-8849332.jpg"  alt="Colorful Laptop Banner" />
+  </div>
+
+  <section class="intro">
+    <h2>Smartvote - Bright Future Begins with Your Vote</h2>
+    <p>Online voting system that is fast, secure, and colorful just like your voice. Cast your vote from anywhere, anytime!</p>
+  </section>
+<footer>
+    <div class="full">
+      <div class="about">
+        <section class="about">
+          <h1>About Us</h1>
+          <p>
+            We are a team of passionate developers dedicated 
+            to creating innovative and user-friendly solutions. 
+            Our goal is to empower businesses with technology.
+          </p>
+        </section>
+      </div>
+
+      <div class="quick">
+        <h1>Quick Link</h1>
+        <div class="sidenav">
+          <a href="#"><i class="fa-solid fa-house"></i> Home</a><br>
+          <a href="#"><i class="fa-solid fa-phone"></i> Contact</a><br>
+          <a href="#"><i class="fa-solid fa-info"></i> About Us</a><br>
+          <a href="#">Log Out</a><br>
+        </div>
+      </div>
+
+      <div class="about">
+        <h1>Contact</h1>
+        <a href="mailto:aman123@gmail.com">Email Us:- aman123@gmail.com</a><br><br>
+        <a href="tel:+9661761533">Call Us:- 9661761533</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

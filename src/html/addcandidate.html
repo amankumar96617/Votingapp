@@ -85,17 +85,69 @@
         display: flex;
       }
     }
-    footer {
-      margin-top: 40px;
-      background-color: #ddd;
-      padding: 10px;
-      text-align: center;
-      font-size: 14px;
-    }
-    .about{
-    text-align: center;
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  footer {
+    background-color: #1b3a4b;
+    color: white;
+    padding: 40px 20px;
+  }
+
+  .full {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .full > div {
+    width: 30%; /* 👈 yahan fix kiya gaya width */
+    margin: 10px;
+  }
+
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  p, a {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
     text-decoration: none;
-    background: #1b3a4b;
+  }
+
+  .about p {
+    max-width: 250px;
+    line-height: 1.5;
+  }
+
+  .sidenav a {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .sidenav i {
+    margin-right: 5px;
+  }
+
+  @media (max-width: 768px) {
+    .full {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .full > div {
+      width: 100%;
+    }
+
+    .about p {
+      max-width: 90%;
+    }
+  }
 }    
 body {
             font-family: Arial, sans-serif;
@@ -142,11 +194,11 @@ body {
       <div></div>
     </div>
     <nav class="nav-links" id="navLinks">
-      <a href="homepage.html" onclick="document.getElementById('adminform').style.display='block'">Home</a>
-      <a href="#">About Us</a>
-      <a href="#">Contact</a>
-      <a href="login.html" onclick="document.getElementById('adminform').style.display='block'">Login</a>
-      <a href="admin.html" onclick="document.getElementById('adminform').style.display='block'">Admin Login</a>
+      <a href="/homepage.html" onclick="document.getElementById('homepage').style.display='block'">Home</a>
+      <a href="#" onclick="document.getElementById('loginform').style.display='block'">About Us</a>
+      <a href="#" onclick="document.getElementById('loginform').style.display='block'">Contact</a>
+      <a href="/Votingapp/src/html/login.html" onclick="document.getElementById('loginform').style.display='block'">Login</a>
+      <a href="/Votingapp/src/html/admin.html" onclick="document.getElementById('adminform').style.display='block'">Admin Login</a>
     </nav>
   </div>
 
@@ -172,30 +224,34 @@ body {
         </div>
     </div>
   <footer>
-<div class="about">
-  <section class ="about">
-    <h1>About Us</h1>
-    <p>We are a team of passionate developers dedicated 
-        to creating innovative and user-friendly solutions. 
-        Our goal is to empower businesses with technology.</p>
-  </section>
-  <section class="about">
-    <h1>Quick Link</h1>
-    <div class="sidenav" id="mysidenav">
-                <a href="homepage.html" onclick="document.getElementById('adminform').style.display='block'"><i class="fa-solid fa-house"></i> Home</a><br>
-                <a href="#"><i class="fa-solid fa-phone"></i> Contact</a><br>
-                <a href="#"><i class="fa-solid fa-info"></i> About Us</a><br>
-               
-                
-                <a href="#">Log Out</a><br>
-            </div>
-  </section>
-  <section class="about">
-    <h1>Contact</h1>
-    <a href="mailto:aman123@gmail.com">Email Us:-aman123@gmail.com</a><br>
-    <a href="tel:+9661761533">Call Us:-9661761533</a>
-  </section>
-  </div>
+    <div class="full">
+      <div class="about">
+        <section class="about">
+          <h1>About Us</h1>
+          <p>
+            We are a team of passionate developers dedicated 
+            to creating innovative and user-friendly solutions. 
+            Our goal is to empower businesses with technology.
+          </p>
+        </section>
+      </div>
+
+      <div class="quick">
+        <h1>Quick Link</h1>
+        <div class="sidenav">
+          <a href="/homepage.html"> Home</a><br>
+          <a href="#"> Contact</a><br>
+          <a href="#">About Us</a><br>
+          <a href="#">Log Out</a><br>
+        </div>
+      </div>
+
+      <div class="about">
+        <h1>Contact</h1>
+        <a href="mailto:aman123@gmail.com">Email Us:- aman123@gmail.com</a><br><br>
+        <a href="tel:+9661761533">Call Us:- 9661761533</a>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
